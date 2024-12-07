@@ -1,25 +1,65 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './Home';
+import About from './About';
+import NewPost from './NewPost';
+import PostPage from './PostPage';
+import EditPost from './EditPost';
+import Nav from './Nav';
+import Header from './Header';
+import { Routes, Route } from 'react-router-dom';
+import { DataProvider } from './context/DataContext';
 
-function App() {
+
+const App = () => {
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <DataProvider>
+
+        <Header />
+        <Nav />
+        <Routes> 
+          {/* Home route */}
+          <Route path="/" element={<Home  />} />
+
+          {/* About route */}
+          <Route path="/about" element={<About />} />
+
+          {/* Posts-related routes */}
+          <Route path="/post">
+            <Route
+              index
+              element={
+                <NewPost
+                 
+                />
+              }
+            />
+            <Route
+              path="edit/:id"
+              element={
+                <EditPost
+                />
+              }
+            />
+            <Route
+              path=":id"
+              element={
+                <PostPage
+                  
+                />
+              }
+            />
+          </Route>
+
+          {/* Fallback route */}
+          <Route path="*" element={<p>Page not found</p>} />
+        </Routes>
+      </DataProvider>
+
     </div>
   );
-}
+};
 
 export default App;

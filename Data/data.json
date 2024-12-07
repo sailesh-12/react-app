@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": "2",
+      "title": "Second Post",
+      "datetime": "December 07, 2024 9:14:21 PM",
+      "body": "This is my second post."
+    },
+    {
+      "id": "21",
+      "title": "React jss",
+      "datetime": "December 07, 2024 9:10:46 PM",
+      "body": "This is a React Blog"
+    },
+    {
+      "id": "211",
+      "title": "Congrats Super Completed React js Course",
+      "datetime": "December 07, 2024 9:11:11 PM",
+      "body": "Super "
+    },
+    {
+      "id": "2111",
+      "title": "My Fourth Post",
+      "datetime": "December 07, 2024 9:14:32 PM",
+      "body": "dafsgg"
+    }
+  ]
+}
